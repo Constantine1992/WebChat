@@ -1,0 +1,16 @@
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\ChatWeb.DAL.dll.config
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\ChatWeb.DAL.dll
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\ChatWeb.DAL.pdb
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\EntityFramework.dll
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\EntityFramework.xml
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Chat\ChatWeb\ChatWeb.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Chat\ChatWeb\ChatWeb.DAL\obj\Debug\ChatWeb.DAL.csprojAssemblyReference.cache
+D:\Chat\ChatWeb\ChatWeb.DAL\obj\Debug\ChatWeb.DAL.csproj.CoreCompileInputs.cache
+D:\Chat\ChatWeb\ChatWeb.DAL\obj\Debug\ChatWeb.DAL.csproj.CopyComplete
+D:\Chat\ChatWeb\ChatWeb.DAL\obj\Debug\ChatWeb.DAL.dll
+D:\Chat\ChatWeb\ChatWeb.DAL\obj\Debug\ChatWeb.DAL.pdb

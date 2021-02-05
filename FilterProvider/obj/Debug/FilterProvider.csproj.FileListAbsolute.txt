@@ -1,0 +1,6 @@
+D:\Chat\ChatWeb\FilterProvider\bin\Debug\FilterProvider.dll
+D:\Chat\ChatWeb\FilterProvider\bin\Debug\FilterProvider.pdb
+D:\Chat\ChatWeb\FilterProvider\obj\Debug\FilterProvider.csprojAssemblyReference.cache
+D:\Chat\ChatWeb\FilterProvider\obj\Debug\FilterProvider.csproj.CoreCompileInputs.cache
+D:\Chat\ChatWeb\FilterProvider\obj\Debug\FilterProvider.dll
+D:\Chat\ChatWeb\FilterProvider\obj\Debug\FilterProvider.pdb
