@@ -1,4 +1,5 @@
-﻿using ChatWeb.BLL.IServisces;
+﻿using ChatWeb.BLL.DTO;
+using ChatWeb.BLL.IServisces;
 using ChatWeb.Models;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
@@ -32,13 +33,15 @@ namespace ChatWeb.UserHub
         {
             return HttpContext.Current.User.Identity.Name;
         }
-        public IEnumerable<BLL.DTO.ChatDTO> GetChats(string user, string userTo, string dateFrom, string dateTo)
+        public IEnumerable<ChatDTO> GetChats(string user, string userTo, string dateFrom, string dateTo)
         {
             DateTime from;
             DateTime to;
             DateTime.TryParse(dateFrom, out from);
-            DateTime.TryParse(dateFrom, out to);
-            return service.GetChats(new BLL.DTO.FilterChatDTO 
+            DateTime.TryParse(dateTo, out to);
+            if (string.IsNullOrEmpty(userTo))
+                return Enumerable.Empty<ChatDTO>();
+            return service.GetChats(new FilterChatDTO 
             { 
                 User = user, UserTo = userTo,
                 BeginDate = from,
