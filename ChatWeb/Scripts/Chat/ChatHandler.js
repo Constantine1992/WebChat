@@ -29,15 +29,19 @@
         });
 
         $('#sendmessage').click(function () {
-            chat.server.send(chat.userName, chat.sendUserName, $('#message').val());
+            sendMessage();
         });
         $('#message').on('keypress', function (e) {
             if (e.which === 13) {
-                chat.server.send(chat.userName, chat.sendUserName, $('#message').val());
+                sendMessage();
             }
         });
     });
 
+    function sendMessage() {
+        chat.server.send(chat.userName, chat.sendUserName, $('#message').val());
+        $('#message').val('');
+    }
 
     function addUser(chat, id, name) {   
         let userDiv = $("#user_Content");
@@ -67,8 +71,7 @@
                 else
                     msgHistory.append(getOutgoinMessage(message.Message, message.CreateDate));
             }
-        });
-    
+        });    
     }
 
     function removeUser(id) {
@@ -90,6 +93,7 @@
             '</div >';
         return chatUserHTML;
     }
+
     function getIncomeMessage(message, date) {
     let incomeMessage = '<div class="incoming_msg">' +
         '<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>'+
@@ -114,7 +118,6 @@
         return outgoinMessage;
     }
 
-
     $(document).ready(function() {
         let begin = dtPickerInitialize('dateFrom', getBeginOfMonth());
         let end = dtPickerInitialize('dateTo', getEndOfMonth());
@@ -130,11 +133,13 @@
         }).datetimepicker();
         return dtPicker;
     };
+
     function getBeginOfMonth() {
         var date = new Date();
         return new Date(date.getFullYear(), date.getMonth(), 1);
     
     }
+
     function getEndOfMonth() {
         var date = new Date();
         return new Date(date.getFullYear(), date.getMonth() + 1, 0);
