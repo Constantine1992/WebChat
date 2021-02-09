@@ -51,8 +51,9 @@
         let children = userDiv.children();
         if (!children || children.length === 0)
             return;
-        $(children[children.length - 1]).click(function () {
+        $(children[children.length - 1]).click(function (sender, e) {
             let sendUserName = this.getElementsByClassName('user_Name')[0].innerText;
+            chat.user = sender.currentTarget;
             addChat(chat, sendUserName);
         });
     }
@@ -71,51 +72,13 @@
                 else
                     msgHistory.append(getOutgoinMessage(message.Message, message.CreateDate));
             }
-        });    
+        }); 
+        setSelected();
     }
 
     function removeUser(id) {
         $("#user_Content").children('#' + id).remove();
         console.log($("#user_Content").children())
-    }
-
-    function getChatUserHTML(id, name) {
-    let chatUserHTML = '<div class="chat_list" id="' +id+'">'+
-        '<div class="chat_people" >'+
-            '<div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>'+
-               ' <div class="chat_ib">'+
-                    '<h5 class="user_Name">'+name+' <span class="chat_date"></span></h5>'+
-                    '<p>'+
-
-                    '</p>'+
-                '</div>'+
-            '</div>'+
-            '</div >';
-        return chatUserHTML;
-    }
-
-    function getIncomeMessage(message, date) {
-    let incomeMessage = '<div class="incoming_msg">' +
-        '<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>'+
-            '<div class="received_msg">'+
-                '<div class="received_withd_msg">'+
-                    '<p>'+
-                        message +'</p>'+
-                    '<span class="time_date"> '+date+''+
-                '</div>'+
-            '</div>'+
-            '</div>';
-        return incomeMessage;
-    }
-
-    function getOutgoinMessage(message, date) {
-        var outgoinMessage = '<div class="outgoing_msg">' +
-            '<div class="sent_msg">' +
-            '<p>  ' + message + ' </p>' +
-            '<span class="time_date"> '+date+'</span>' +
-            '</div>'+
-        '</div>';
-        return outgoinMessage;
     }
 
     $(document).ready(function() {
@@ -143,6 +106,22 @@
     function getEndOfMonth() {
         var date = new Date();
         return new Date(date.getFullYear(), date.getMonth() + 1, 0);
-     }
+    }
 
+    function setSelected() {
+        let chatUsers = $('.chat_list');
+        for (let i = 0; i < chatUsers.length; i++) {
+            let current = $(chatUsers[i]);
+            if (current.attr('id') === $(chat.user).attr('id'))
+                current.attr('class', 'chat_list active_chat');
+            else
+                current.attr('class', 'chat_list');
+        }
+    }
+
+    $('#deleteTest').click(function () {
+        console.log('delete');
+        let msgHistory = $('.msg_history');
+        msgHistory.children().remove();
+    });
 });

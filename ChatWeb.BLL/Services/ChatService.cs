@@ -24,7 +24,8 @@ namespace ChatWeb.BLL.Services
         public IEnumerable<ChatDTO> GetChats(FilterChatDTO filter)
         {
             OrElseBuilder<Chat> builder = OrElseBuilder<Chat>.CreateBuilder();
-            builder.AppendAndAlso(n => n.From == filter.User || n.To == filter.User);
+            builder.AppendAndAlso(n => n.From == filter.UserFrom && n.To == filter.UserTo);
+            builder.AppendOrElse(n => n.From == filter.UserTo && n.To == filter.UserFrom);
             builder.AppendAndAlso(n => !string.IsNullOrEmpty(n.Message));
             builder.AppendAndAlso(n => n.CreateDate >= filter.BeginDate, filter.BeginDate != DateTime.MinValue);
             builder.AppendAndAlso(n => n.CreateDate <= filter.EndDate, filter.EndDate != DateTime.MinValue);

@@ -32,6 +32,7 @@
                     <div class="headind_srch">
                         <div class="recent_heading">
                             <h4 id="currentUser">Users</h4>
+                            <button id="deleteTest">delete</button>
                         </div>
 
                        
@@ -71,7 +72,8 @@
 
 
     @Scripts.Render("~/signalr/hubs",
-                    "~/Scripts/Chat/ChatHandler.js",
+                    "~/Scripts/Chat/chatHandler.js",
+                    "~/Scripts/Chat/userHTML.js",
                     "~/Scripts/bootstrap.min.js",
 
                     "~/Scripts/dtpicker/bootstrap-datetimepicker.min.js");

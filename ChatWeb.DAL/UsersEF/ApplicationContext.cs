@@ -14,7 +14,12 @@ namespace ChatWeb.DAL.UsersEF
         public ApplicationContext(string connectionString)
             :base(connectionString)
         {
-            
+            Database.SetInitializer(new DbIdentityInitializer());
+            if (this.Roles.Count() == 0)
+            {
+                this.Roles.Add(new IdentityRole { Name = "user" });
+                this.SaveChanges();
+            }
         }
         public DbSet<ClientProfile> ClientProfiles { get; set; }
     }

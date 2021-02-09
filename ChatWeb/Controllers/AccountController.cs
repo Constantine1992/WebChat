@@ -89,7 +89,7 @@ namespace ChatWeb.Controllers
                 };
                 OperationDetails operationDetails = await UserService.Create(userDto);
                 if (operationDetails.Succedeed)
-                    return View("SuccessRegister");
+                    return RedirectToAction("Index","ChatWeb");
                 else
                     ModelState.AddModelError(operationDetails.Property, operationDetails.Message);
             }

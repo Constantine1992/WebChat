@@ -33,7 +33,7 @@ namespace ChatWeb.UserHub
         {
             return HttpContext.Current.User.Identity.Name;
         }
-        public IEnumerable<ChatDTO> GetChats(string user, string userTo, string dateFrom, string dateTo)
+        public IEnumerable<ChatDTO> GetChats(string userFrom, string userTo, string dateFrom, string dateTo)
         {
             DateTime from;
             DateTime to;
@@ -43,7 +43,9 @@ namespace ChatWeb.UserHub
                 return Enumerable.Empty<ChatDTO>();
             return service.GetChats(new FilterChatDTO 
             { 
-                User = user, UserTo = userTo,
+                //User = user, 
+                UserFrom =  userFrom,
+                UserTo = userTo,
                 BeginDate = from,
                 EndDate = to
             });

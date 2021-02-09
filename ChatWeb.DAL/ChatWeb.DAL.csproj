@@ -76,6 +76,7 @@
     <Compile Include="UserRepositories\ClientManager.cs" />
     <Compile Include="UserRepositories\IdentityUnitOfWork.cs" />
     <Compile Include="UsersEF\ApplicationContext.cs" />
+    <Compile Include="UsersEF\DbIdentityInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
